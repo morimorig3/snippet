@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outside swiper arrow sample 3</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        .swiper {
+            width: 300px;
+        }
+        .swiper-grand {
+            position: relative;
+            padding-right: 50px;
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Swiper.jsの矢印を外へ出す</h1></header>
+    <section> 
+        <h2>矢印を外に出すSwiper</h2>
+        <p>buttonはswiper-container内にいる限り外に出せない</p>
+        <ol>
+            <li>親要素でループを回す</li>
+            <li>querySelectorで各々のswiper-containerとswiper-button-prevとswiper-button-nextを変数に格納する</li>
+            <li>newする
+                <ol>
+                    <li>第一引数のswiperContainerに2で格納したswiper-containerのHTMLElementを渡す<br>
+                    swiperContainer - HTMLElement or string (with CSS Selector) of swiper container HTML element. Required.</li>
+                    <li>第二引数の設定を渡す時にnavigationの値をそれぞれ2で格納したswiper-button-prevとswiper-button-nextのHTMLElementを渡す</li>
+                </ol>
+            </li>
+        </ol>
+        <div class="wrapper wrapper--outside">
+            <div class="swiper-grand js-swiper-grand">
+                <div class="swiper-container swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=1" alt=""></div>
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=2" alt=""></div>
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=3" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="swiper-grand js-swiper-grand">
+                <div class="swiper-container swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=1" alt=""></div>
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=2" alt=""></div>
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=3" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+    <!-- <script>
+        document.querySelectorAll('.js-swiper-grand').forEach(function (node, index) {
+            const container = node.querySelector('.swiper-container')
+            const nextEl = node.querySelector('.swiper-button-next')
+            const prevEl = node.querySelector('.swiper-button-prev')
+
+            const swiper = new Swiper(container, {
+                navigation: {
+                    nextEl: nextEl,
+                    prevEl: prevEl,
+                },
+            });
+        })
+    </script> -->
+    <!-- <script>
+        const swipers = [...document.querySelectorAll('.js-swiper-grand')].map(node => swiperInit(node))
+        function swiperInit(node){
+            const container = node.querySelector('.swiper-container')
+            const nextEl = node.querySelector('.swiper-button-next')
+            const prevEl = node.querySelector('.swiper-button-prev')
+            
+            const parameter = {
+                navigation: {
+                    nextEl: nextEl,
+                    prevEl: prevEl,
+                },
+            }
+            return new Swiper(container, parameter)
+        }
+    </script> -->
+    <script>
+        var nodes = document.querySelectorAll('.js-swiper-grand')
+        Array.prototype.forEach.call(nodes, function (node, index) {
+            var container = node.querySelector('.swiper-container')
+            var nextEl = node.querySelector('.swiper-button-next')
+            var prevEl = node.querySelector('.swiper-button-prev')
+
+            var swiper = new Swiper(container, {
+                navigation: {
+                    nextEl: nextEl,
+                    prevEl: prevEl,
+                },
+            });
+        })
+    </script>
+</body>
+</html>

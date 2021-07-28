@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outside swiper arrow sample 2</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        .swiper {
+            width: 300px;
+        }
+        .swiper-grand {
+            position: relative;
+            padding-right: 50px;
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Swiper.jsの矢印を外へ出す</h1></header>
+    <section> 
+        <h2>矢印を外に出すSwiper</h2>
+        <p>buttonはswiper-container内にいる限り外に出せない</p>
+        <ol>
+            <li>新しいdivで全体をラップする（swiper-grand）</li>
+            <li>buttonを新しいdivの子要素に移動させる</li>
+        </ol>
+        <div class="wrapper wrapper--outside">
+            <div class="swiper-grand">
+                <div class="swiper-container swiper js-swiper-outside">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=1" alt=""></div>
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=2" alt=""></div>
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=3" alt=""></div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <section>
+                <h3>一見できたようだがCarouselを複数実装した時に問題が発生する</h3>
+                <div class="swiper-grand">
+                    <div class="swiper-container swiper js-swiper-outside-sample">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://unsplash.it/300?image=1" alt=""></div>
+                            <div class="swiper-slide"><img src="https://unsplash.it/300?image=2" alt=""></div>
+                            <div class="swiper-slide"><img src="https://unsplash.it/300?image=3" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="swiper-grand">
+                    <div class="swiper-container swiper js-swiper-outside-sample">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://unsplash.it/300?image=1" alt=""></div>
+                            <div class="swiper-slide"><img src="https://unsplash.it/300?image=2" alt=""></div>
+                            <div class="swiper-slide"><img src="https://unsplash.it/300?image=3" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <section> 
+        <h2>矢印を外に出すSwiper</h2>
+        <p>buttonはswiper-container内にいる限り外に出せない</p>
+        <ol>
+            <li>新しいdivで全体をラップする（swiper-grand）</li>
+            <li>buttonを新しいdivの子要素に移動させる</li>
+        </ol>
+        <div class="wrapper wrapper--outside">
+            <div class="swiper-grand js-swiper-grand">
+                <div class="swiper-container swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=1" alt=""></div>
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=2" alt=""></div>
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=3" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="swiper-grand js-swiper-grand">
+                <div class="swiper-container swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=1" alt=""></div>
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=2" alt=""></div>
+                        <div class="swiper-slide"><img src="https://unsplash.it/300?image=3" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const outsideSwiper = new Swiper('.js-swiper-outside', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
+        const outsideSampleSwiper = new Swiper('.js-swiper-outside-sample', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
+    </script>
+</body>
+</html>
