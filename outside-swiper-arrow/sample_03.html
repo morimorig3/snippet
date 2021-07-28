@@ -62,21 +62,7 @@
             </div>
         </div>
     </section>
-    <!-- <script>
-        document.querySelectorAll('.js-swiper-grand').forEach(function (node, index) {
-            const container = node.querySelector('.swiper-container')
-            const nextEl = node.querySelector('.swiper-button-next')
-            const prevEl = node.querySelector('.swiper-button-prev')
-
-            const swiper = new Swiper(container, {
-                navigation: {
-                    nextEl: nextEl,
-                    prevEl: prevEl,
-                },
-            });
-        })
-    </script> -->
-    <!-- <script>
+    <script>
         const swipers = [...document.querySelectorAll('.js-swiper-grand')].map(node => swiperInit(node))
         function swiperInit(node){
             const container = node.querySelector('.swiper-container')
@@ -91,10 +77,10 @@
             }
             return new Swiper(container, parameter)
         }
-    </script> -->
-    <script>
-        var nodes = document.querySelectorAll('.js-swiper-grand')
-        Array.prototype.forEach.call(nodes, function (node, index) {
+    </script>
+    <!-- <script>
+        var targets = document.querySelectorAll('.js-swiper-grand')
+        Array.prototype.forEach.call(targets, function (node, index) {
             var container = node.querySelector('.swiper-container')
             var nextEl = node.querySelector('.swiper-button-next')
             var prevEl = node.querySelector('.swiper-button-prev')
@@ -106,6 +92,6 @@
                 },
             });
         })
-    </script>
+    </script> -->
 </body>
 </html>
